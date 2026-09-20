@@ -1,0 +1,32 @@
+# Configuration locale et secrets
+.env
+.env.*
+!.env.example
+*.key
+*.p12
+*.pfx
+
+# Historique et réglages locaux des éditeurs
+.history/
+.idea/
+.vscode/
+
+# Python et notebooks
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Dépendances et fichiers générés
+node_modules/
+dist/
+build/
+coverage/
+
+# Fichiers locaux et fichiers système
+.local/
+.DS_Store
+Thumbs.db
+desktop.ini
