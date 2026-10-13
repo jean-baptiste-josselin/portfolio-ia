@@ -1,0 +1,11 @@
+# Réglages du site GitHub Pages (aperçus LinkedIn et moteurs de recherche)
+lang: fr
+locale: fr_FR
+description: "Portfolio de Jean-Baptiste Josselin : projets d'automatisation et d'applications web pour petites structures, avec besoins métier, résultats et limites."
+
+defaults:
+  - scope:
+      path: "projets/nova-services"
+    values:
+      image: /projets/nova-services/accueil.jpg
+      description: "Une petite entreprise de services perdait le fil de ses demandes clients. Application conçue, testée et mise en ligne : formulaire, suivi des statuts, droits par profil."
