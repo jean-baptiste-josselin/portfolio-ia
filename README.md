@@ -4,7 +4,11 @@ Ce portfolio présentera mes réalisations au fil de mon parcours vers le consei
 
 ## Réalisations
 
-Les premières réalisations seront ajoutées après leur développement et leur vérification. Aucun projet n'est encore publié ici.
+| Projet | Besoin métier | Outils |
+|---|---|---|
+| [Nova Services : centraliser et suivre les demandes clients](projets/nova-services/) | Des demandes reçues par email et téléphone, recopiées à la main, avec des oublis et des doublons | Next.js, Supabase, Vercel, n8n, IA |
+
+*Projet réalisé en formation (entreprise fictive) ; les réalisations suivantes seront ajoutées après leur développement et leur vérification.*
 
 ## Ce que présentera chaque projet
 
