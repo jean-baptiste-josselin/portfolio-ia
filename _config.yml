@@ -9,3 +9,8 @@ defaults:
     values:
       image: /projets/nova-services/accueil.jpg
       description: "Une petite entreprise de services perdait le fil de ses demandes clients. Application conçue, testée et mise en ligne : formulaire, suivi des statuts, droits par profil."
+  - scope:
+      path: "projets/n8n-reception-demandes"
+    values:
+      image: /projets/n8n-reception-demandes/workflow.png
+      description: "Un workflow n8n qui prévient le bon service à chaque nouvelle demande, fait proposer une catégorie par une IA sous contrôle et trace chaque traitement."
