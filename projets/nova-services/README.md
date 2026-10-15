@@ -74,7 +74,7 @@ Développement **assisté par l'IA** (Claude Code, Codex), avec une règle const
 
 - **405 tests automatisés** (chaque fonction vérifiée séparément) et **192 scénarios de bout en bout** (un utilisateur simulé parcourt l'application), tous réussis.
 - **Accès protégés** : seuls les collaborateurs actifs voient les demandes ; un compte désactivé est refusé dès l'action suivante, même par un accès direct à la base.
-- **Données et secrets** : base hébergée en France, données de démonstration fictives, mots de passe et clés jamais écrits dans le code.
+- **Données et secrets** : base hébergée en France (Paris) ; automatisation n8n hébergée dans l'Union européenne (Allemagne) ; données de démonstration fictives, mots de passe et clés jamais écrits dans le code.
 - **Erreurs gérées** : si la base ne répond pas, le client voit un message clair, sa saisie est conservée et l'envoi ne crée pas de doublon. Jamais de faux « c'est enregistré ».
 - **Exploitation préparée** : supervision des erreurs, procédure de retour arrière, sauvegarde et restauration (testées en environnement isolé).
 
@@ -87,7 +87,7 @@ C'est un **exercice de formation** : pas de mesure chez un vrai client. Ce qui e
 ## 9. Limites et suites
 
 - La version en ligne est une **démonstration** (environnement de développement, données fictives). Une vraie mise en service demanderait un environnement dédié, l'activation des sauvegardes sur la base hébergée et des choix à faire avec le client : durée de conservation, responsable du support.
-- **Automatisation réalisée et testée (n8n, formation)** : être **prévenu** au lieu d'aller voir. À chaque nouvelle demande, le bon service reçoit un email ; si le client a choisi « Autre », une IA propose une catégorie (sans jamais répondre au client ni changer un statut) ; chaque traitement est tracé sans donnée personnelle ; toute panne déclenche une alerte. Ce prototype fonctionne et ses cas d'erreur sont testés. **Prochaine étape** : l'héberger sur un serveur et le brancher sur l'application en ligne.
+- **Automatisation réalisée et testée (n8n, formation)** : être **prévenu** au lieu d'aller voir. À chaque nouvelle demande, le bon service reçoit un email ; si le client a choisi « Autre », une IA propose une catégorie (sans jamais répondre au client ni changer un statut) ; chaque traitement est tracé sans donnée personnelle ; toute panne déclenche une alerte. Ce prototype fonctionne et ses cas d'erreur sont testés. Il est **hébergé sur un serveur OVHcloud** (Francfort, Union européenne, HTTPS, webhook protégé par une clé). **Prochaine étape** : le brancher sur l'application en ligne (la demande est enregistrée d'abord, la notification suit, avec relance en cas d'échec).
 
 ## 10. Ce que ça dit de ma méthode
 
