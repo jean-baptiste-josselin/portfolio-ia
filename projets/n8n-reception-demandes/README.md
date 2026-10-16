@@ -10,7 +10,7 @@
 
 *Statut : prototype de formation. Le workflow est hébergé sur un serveur OVHcloud (Francfort, Union européenne), en HTTPS, avec un webhook protégé par une clé ; il a été testé par des requêtes envoyées sur son adresse de production. L'application Nova ne l'appelle pas encore automatiquement.*
 
-![Le workflow dans l'éditeur n8n : réception, contrôle, IA si « Autre », repli, notification et journal](workflow.png)
+![Le workflow dans l'éditeur n8n, en trois blocs repliables : ① contrôler, ② aiguiller et catégoriser (IA si « Autre », repli), ③ notifier puis journaliser](workflow.png)
 
 ---
 
@@ -63,7 +63,7 @@ Règle retenue : **plus une erreur coûte cher, plus la validation humaine inter
 | **Groq** (modèle `openai/gpt-oss-20b`) | Rapide, offre gratuite suffisante pour le volume ; conditions annonçant l'absence d'entraînement sur les données transmises (à revérifier avant un usage réel) |
 | **Journal dans Postgres plutôt que Google Sheets** | Retour du mentor : une vraie base, reliée à la demande. Le journal vit dans la base de l'application (Supabase, région Paris), avec une clé étrangère vers la demande |
 
-**Évolution du projet** : v1 avec un journal Google Sheets, v2 avec la gestion des pannes et le workflow d'alerte, **v3 avec le journal Postgres** après la revue du mentor.
+**Évolution du projet** : v1 avec un journal Google Sheets, v2 avec la gestion des pannes et le workflow d'alerte, **v3 avec le journal Postgres** après la revue du mentor, puis (v3.4) étapes regroupées en trois blocs repliables et commentés pour la lisibilité, la notification et le journal étant désormais enchaînés.
 
 ## 6. Qualité, sécurité, données personnelles
 
