@@ -5,6 +5,10 @@ description: "Portfolio de Jean-Baptiste Josselin : projets d'automatisation et 
 
 defaults:
   - scope:
+      path: "README.md"
+    values:
+      image: /projets/nova-services/accueil.jpg
+  - scope:
       path: "projets/nova-services"
     values:
       image: /projets/nova-services/accueil.jpg
