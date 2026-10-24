@@ -4,9 +4,9 @@
 
 **En une phrase** : une petite entreprise de services recevait ses demandes par email et téléphone, les recopiait dans plusieurs fichiers et en perdait le fil. J'ai conçu, développé et mis en ligne une application qui centralise toutes les demandes et montre à l'équipe ce qui reste à traiter.
 
-**Application en ligne · 3 profils (client, collaborateur, administrateur) · 405 tests automatisés · 192 parcours complets simulés, tous réussis · automatisation n8n réalisée et testée**
+**Application en ligne · 3 profils (client, collaborateur, administrateur) · 414 tests automatisés · 196 parcours complets simulés, tous réussis · automatisation n8n branchée et contrôlée en ligne**
 
-*Les 405 tests vérifient chaque fonction séparément ; les 192 scénarios rejouent des parcours d'utilisateur de bout en bout. Ce sont deux niveaux de contrôle différents, pas 597 tests indépendants.*
+*Les 414 tests vérifient chaque fonction séparément ; les 196 scénarios rejouent des parcours d'utilisateur de bout en bout. Ce sont deux niveaux de contrôle différents, pas 610 tests indépendants.*
 
 Application en ligne (démonstration) : [nova-services-demandes.vercel.app](https://nova-services-demandes.vercel.app)  
 Code source : dépôt privé (projet de formation), présentation possible sur demande.
@@ -72,7 +72,7 @@ Développement **assisté par l'IA** (Claude Code, Codex), avec une règle const
 
 ## 7. Qualité et sécurité
 
-- **405 tests automatisés** (chaque fonction vérifiée séparément) et **192 scénarios de bout en bout** (un utilisateur simulé parcourt l'application), tous réussis.
+- **414 tests automatisés** (chaque fonction vérifiée séparément) et **196 scénarios de bout en bout** (un utilisateur simulé parcourt l'application), tous réussis.
 - **Accès protégés** : seuls les collaborateurs actifs voient les demandes ; un compte désactivé est refusé dès l'action suivante, même par un accès direct à la base.
 - **Données et secrets** : base hébergée en France (Paris) ; automatisation n8n hébergée dans l'Union européenne (Allemagne) ; données de démonstration fictives, mots de passe et clés jamais écrits dans le code.
 - **Erreurs gérées** : si la base ne répond pas, le client voit un message clair, sa saisie est conservée et l'envoi ne crée pas de doublon. Jamais de faux « c'est enregistré ».
@@ -87,7 +87,7 @@ C'est un **exercice de formation** : pas de mesure chez un vrai client. Ce qui e
 ## 9. Limites et suites
 
 - La version en ligne est une **démonstration** (environnement de développement, données fictives). Une vraie mise en service demanderait un environnement dédié, l'activation des sauvegardes sur la base hébergée et des choix à faire avec le client : durée de conservation, responsable du support.
-- **Automatisation réalisée et testée (n8n, formation)** : être **prévenu** au lieu d'aller voir. À chaque nouvelle demande, le bon service reçoit un email ; si le client a choisi « Autre », une IA propose une catégorie (sans jamais répondre au client ni changer un statut) ; chaque traitement est tracé sans donnée personnelle ; toute panne déclenche une alerte. Ce prototype fonctionne et ses cas d'erreur sont testés. Il est **hébergé sur un serveur OVHcloud** (Francfort, Union européenne, HTTPS, webhook protégé par une clé). **Prochaine étape** : le brancher sur l'application en ligne (la demande est enregistrée d'abord, la notification suit, avec relance en cas d'échec).
+- **Automatisation branchée et contrôlée en ligne (n8n, formation)** : être **prévenu** au lieu d'aller voir. À chaque nouvelle demande, le bon service reçoit un email ; si le client a choisi « Autre », une IA propose une catégorie (sans jamais répondre au client ni changer un statut) ; chaque traitement est tracé sans donnée personnelle ; toute panne déclenche une alerte. Ce prototype fonctionne et ses cas d'erreur sont testés. Il est **hébergé sur un serveur OVHcloud** (Francfort, Union européenne, HTTPS, webhook protégé par une clé). **Depuis le 23 octobre 2026, l'application l'appelle elle-même** : la demande est enregistrée d'abord, la notification suit ; si n8n ne répond pas, une relance repasse toutes les 15 minutes pendant 24 heures, puis l'échec est signalé dans la supervision. Contrôlé en ligne : une vraie demande a déclenché l'email au bon service et sa trace dans le journal. Reste prévue : l'écriture de la catégorie proposée par l'IA dans la demande elle-même.
 
 ## 10. Ce que ça dit de ma méthode
 
