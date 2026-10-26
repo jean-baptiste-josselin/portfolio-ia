@@ -63,7 +63,7 @@ Règle retenue : **plus une erreur coûte cher, plus la validation humaine inter
 | **Groq** (modèle `openai/gpt-oss-20b`) | Rapide, offre gratuite suffisante pour le volume ; conditions annonçant l'absence d'entraînement sur les données transmises (à revérifier avant un usage réel) |
 | **Journal dans Postgres plutôt que Google Sheets** | Retour du mentor : une vraie base, reliée à la demande. Le journal vit dans la base de l'application (Supabase, région Paris), avec une clé étrangère vers la demande |
 
-**Évolution du projet** : v1 avec un journal Google Sheets, v2 avec la gestion des pannes et le workflow d'alerte, **v3 avec le journal Postgres** après la revue du mentor, puis (v3.4) étapes regroupées en trois blocs repliables et commentés pour la lisibilité, la notification et le journal étant désormais enchaînés.
+**Évolution du projet** : v1 avec un journal Google Sheets, v2 avec la gestion des pannes et le workflow d'alerte, **v3 avec le journal Postgres** après la revue du mentor, puis (v3.4) étapes regroupées en trois blocs repliables et commentés pour la lisibilité, la notification et le journal étant désormais enchaînés ; (v3.5) appel direct par l'application, chaque trace rattachée à sa demande ; (v3.6) objet de la demande dans le sujet de l'email, pour que le service repère d'emblée une demande transmise par l'agent IA ou urgente.
 
 ## 6. Qualité, sécurité, données personnelles
 
