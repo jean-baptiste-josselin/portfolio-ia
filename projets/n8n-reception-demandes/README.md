@@ -8,7 +8,7 @@
 
 **n8n · IA (Groq) bornée à une liste fermée · journal Postgres (Supabase) en accès « ajout seul » · workflow d'alerte en cas de panne · 10 cas de test, dont 3 pannes provoquées**
 
-*Statut : prototype de formation. Le workflow est hébergé sur un serveur OVHcloud (Francfort, Union européenne), en HTTPS, avec un webhook protégé par une clé ; il a été testé par des requêtes envoyées sur son adresse de production. L'application Nova ne l'appelle pas encore automatiquement.*
+*Statut : prototype de formation. Le workflow est hébergé sur un serveur OVHcloud (Francfort, Union européenne), en HTTPS, avec un webhook protégé par une clé ; il a été testé par des requêtes envoyées sur son adresse de production. Depuis le 23 octobre 2026, l'application Nova l'appelle elle-même après chaque nouvelle demande.*
 
 ![Le workflow dans l'éditeur n8n, en trois blocs repliables : ① contrôler, ② aiguiller et catégoriser (IA si « Autre », repli), ③ notifier puis journaliser](workflow.png)
 
