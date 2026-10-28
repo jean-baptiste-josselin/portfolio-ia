@@ -46,9 +46,9 @@ J'ai mené le projet de bout en bout, seul :
 | **L'administrateur** | Gérer les **comptes et les droits** de l'équipe, et les paramètres (catégories) |
 | **Le visiteur** | Poser ses questions à l'**assistant** de la page `/assistant` : réponses tirées des ressources de Nova (horaires, services, tarifs, procédures), avec la source citée ; s'il le souhaite, transmission de sa demande à l'équipe, après un récapitulatif et son accord explicite |
 
-![Page d'accueil : le client et l'équipe ont chacun leur entrée](accueil.jpg)
+![Page d'accueil : faire une demande, poser une question à l'assistant ou accéder à l'espace de l'équipe](accueil.jpg)
 
-![Formulaire de demande : champs obligatoires clairement signalés](formulaire.jpg)
+![Formulaire de demande : champs obligatoires clairement signalés, lien vers l'assistant](formulaire.jpg)
 
 ![Tableau de bord de l'équipe : ce qui est nouveau, en cours ou traité, en un coup d'œil](tableau-de-bord.jpg)
 
