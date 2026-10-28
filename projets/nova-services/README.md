@@ -4,9 +4,9 @@
 
 **En une phrase** : une petite entreprise de services recevait ses demandes par email et téléphone, les recopiait dans plusieurs fichiers et en perdait le fil. J'ai conçu, développé et mis en ligne une application qui centralise toutes les demandes et montre à l'équipe ce qui reste à traiter.
 
-**Application en ligne · 3 profils (client, collaborateur, administrateur) · 507 tests automatisés · 202 parcours complets simulés, tous réussis · automatisation n8n et agent IA branchés et contrôlés en ligne**
+**Application en ligne · 3 profils (client, collaborateur, administrateur) · assistant IA intégré à l'application · 612 tests automatisés · parcours complets simulés, tous réussis · automatisation n8n branchée et contrôlée en ligne**
 
-*Les 507 tests vérifient chaque fonction séparément ; les 202 scénarios rejouent des parcours d'utilisateur de bout en bout. Ce sont deux niveaux de contrôle différents, pas 709 tests indépendants.*
+*Les 612 tests vérifient chaque fonction séparément ; les parcours simulés rejouent l'application de bout en bout dans un navigateur (202 lors de la dernière campagne complète, le 26 octobre 2026, puis une campagne dédiée au chat, avec un faux agent). Ce sont deux niveaux de contrôle différents.*
 
 Application en ligne (démonstration) : [nova-services-demandes.vercel.app](https://nova-services-demandes.vercel.app)  
 Code source : dépôt privé (projet de formation), présentation possible sur demande.
@@ -44,6 +44,7 @@ J'ai mené le projet de bout en bout, seul :
 | **Le client** | Déposer sa demande dans un formulaire simple et recevoir une **confirmation d'enregistrement** |
 | **Le collaborateur** | Retrouver toutes les demandes au même endroit, les **rechercher et filtrer**, suivre leur statut (**Nouvelle, En cours, Traitée**) et l'**historique** de chaque traitement |
 | **L'administrateur** | Gérer les **comptes et les droits** de l'équipe, et les paramètres (catégories) |
+| **Le visiteur** | Poser ses questions à l'**assistant** de la page `/assistant` : réponses tirées des ressources de Nova (horaires, services, tarifs, procédures), avec la source citée ; s'il le souhaite, transmission de sa demande à l'équipe, après un récapitulatif et son accord explicite |
 
 ![Page d'accueil : le client et l'équipe ont chacun leur entrée](accueil.jpg)
 
@@ -57,7 +58,9 @@ J'ai mené le projet de bout en bout, seul :
 
 ![Administration : comptes de l'équipe, rôles et état (actif ou désactivé)](gestion-comptes.jpg)
 
-*Captures réalisées avec des demandes fictives.*
+![Assistant Nova : avertissement, détail de la confidentialité, fenêtre de conversation et saisie](assistant.jpg)
+
+*Captures réalisées avec des demandes fictives ; l'assistant est montré au repos, sans conversation.*
 
 ## 6. Ce que ça apporte, et avec quels outils
 
@@ -67,12 +70,14 @@ J'ai mené le projet de bout en bout, seul :
 | **Chacun ne voit que ce qu'il doit voir** | Comptes et droits gérés par la base elle-même |
 | **Accessible partout**, sans installation | Application web **Next.js**, informations sensibles gardées côté serveur |
 | **Une mise à jour ratée se corrige vite** | Mise en ligne avec **Vercel** : retour à la version précédente possible |
+| **Un premier niveau de réponse à toute heure** | Assistant construit dans **n8n** (hébergé dans l'UE) avec un modèle de langage **Groq** et une recherche dans les ressources de l'entreprise (RAG) ; l'application relaie les messages et garde la main sur les accès |
 
 Développement **assisté par l'IA** (Claude Code, Codex), avec une règle constante : c'est moi qui fixe les critères, qui fais vérifier chaque étape et qui tranche.
 
 ## 7. Qualité et sécurité
 
-- **507 tests automatisés** (chaque fonction vérifiée séparément) et **202 scénarios de bout en bout** (un utilisateur simulé parcourt l'application), tous réussis, plus des contrôles de la base de données sur une copie jetable.
+- **612 tests automatisés** (chaque fonction vérifiée séparément) et des **scénarios de bout en bout** (un utilisateur simulé parcourt l'application, 202 lors de la dernière campagne complète), tous réussis, plus des contrôles de la base de données sur une copie jetable.
+- **Assistant encadré** : le navigateur ne parle qu'à l'application, jamais directement à l'automatisation ; clé d'accès vérifiée puis retirée par le serveur web avant n8n, et renouvelée avant l'ouverture ; plafonds de messages par conversation et par adresse ; aucune conversation conservée dans l'historique de n8n ni dans la base de Nova (seulement des informations techniques, sans le texte des messages) ; en cas de panne, un message clair et un lien vers le formulaire.
 - **Accès protégés** : seuls les collaborateurs actifs voient les demandes ; un compte désactivé est refusé dès l'action suivante, même par un accès direct à la base.
 - **Données et secrets** : base hébergée en France (Paris) ; automatisation n8n hébergée dans l'Union européenne (Allemagne) ; données de démonstration fictives, mots de passe et clés jamais écrits dans le code.
 - **Erreurs gérées** : si la base ne répond pas, le client voit un message clair, sa saisie est conservée et l'envoi ne crée pas de doublon. Jamais de faux « c'est enregistré ».
@@ -88,7 +93,8 @@ C'est un **exercice de formation** : pas de mesure chez un vrai client. Ce qui e
 
 - La version en ligne est une **démonstration** (environnement de développement, données fictives). Une vraie mise en service demanderait un environnement dédié, l'activation des sauvegardes sur la base hébergée et des choix à faire avec le client : durée de conservation, responsable du support.
 - **Automatisation branchée et contrôlée en ligne (n8n, formation)** : être **prévenu** au lieu d'aller voir. À chaque nouvelle demande, le bon service reçoit un email ; si le client a choisi « Autre », une IA propose une catégorie (sans jamais répondre au client ni changer un statut) ; chaque traitement est tracé sans donnée personnelle ; toute panne déclenche une alerte. Ce prototype fonctionne et ses cas d'erreur sont testés. Il est **hébergé sur un serveur OVHcloud** (Francfort, Union européenne, HTTPS, webhook protégé par une clé). **Depuis le 23 octobre 2026, l'application l'appelle elle-même** : la demande est enregistrée d'abord, la notification suit ; si n8n ne répond pas, une relance repasse toutes les 15 minutes pendant 24 heures, puis l'échec est signalé dans la supervision. Contrôlé en ligne : une vraie demande a déclenché l'email au bon service et sa trace dans le journal. Reste prévue : l'écriture de la catégorie proposée par l'IA dans la demande elle-même.
-- **Agent IA d'accueil (n8n, formation)** : un assistant conversationnel répond aux questions à partir des ressources de Nova et, avec l'accord explicite de l'utilisateur, **transmet sa demande à l'application**. Nova revérifie tout ce que l'agent envoie (la sortie d'une IA n'est jamais tenue pour fiable), l'enregistre avec son origine « agent », prévient le bon service et refuse une seconde transmission dans la même conversation. Accès par un jeton dédié, révocable seul. **Contrôlé en ligne le 26 octobre 2026** : transmission réelle enregistrée et notifiée au service Commercial, doublon refusé, demande de test supprimée ensuite. Reste prévu : le chat directement dans l'application.
+- **Agent IA d'accueil (n8n, formation)** : un assistant conversationnel répond aux questions à partir des ressources de Nova et, avec l'accord explicite de l'utilisateur, **transmet sa demande à l'application**. Nova revérifie tout ce que l'agent envoie (la sortie d'une IA n'est jamais tenue pour fiable), l'enregistre avec son origine « agent », prévient le bon service et refuse une seconde transmission dans la même conversation. Accès par un jeton dédié, révocable seul. **Contrôlé en ligne le 26 octobre 2026** : transmission réelle enregistrée et notifiée au service Commercial, doublon refusé, demande de test supprimée ensuite. **Depuis le 28 octobre 2026, ce chat est intégré à l'application** (page `/assistant`) : contrôlé en ligne par un échange réel, réponse sur les horaires avec la source citée.
+- **Limites de l'assistant, dites clairement** : c'est un prototype de formation. Les messages sont traités par Groq, service américain (transfert hors de l'Union européenne) ; l'option de non-conservation est activée sur le compte, sans preuve à ce jour qu'elle couvre chacun des messages. Des traces techniques peuvent rester un temps sur le serveur n8n et dans ses sauvegardes. Ces points seraient à reprendre avant tout usage avec de vrais clients (choix du fournisseur d'IA, contrat de traitement, durées de conservation).
 
 ## 10. Ce que ça dit de ma méthode
 

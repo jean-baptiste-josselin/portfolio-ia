@@ -12,7 +12,7 @@ defaults:
       path: "projets/nova-services"
     values:
       image: /projets/nova-services/accueil.jpg
-      description: "Une petite entreprise de services perdait le fil de ses demandes clients. Application conçue, testée et mise en ligne : formulaire, suivi des statuts, droits par profil."
+      description: "Une petite entreprise de services perdait le fil de ses demandes clients. Application conçue, testée et mise en ligne : formulaire, suivi des statuts, droits par profil et assistant IA intégré."
   - scope:
       path: "projets/n8n-reception-demandes"
     values:

@@ -8,7 +8,7 @@ Chaque fiche part d'un besoin métier, puis montre la solution, les tests, les r
 
 | Projet | Besoin métier | Outils |
 |---|---|---|
-| [Nova Services : centraliser et suivre les demandes clients](projets/nova-services/) · [démo en ligne](https://nova-services-demandes.vercel.app) | Des demandes reçues par email et téléphone, recopiées à la main, avec des oublis et des doublons | Next.js, Supabase, Vercel, n8n, IA |
+| [Nova Services : centraliser et suivre les demandes clients](projets/nova-services/) · [démo en ligne](https://nova-services-demandes.vercel.app) | Des demandes reçues par email et téléphone, recopiées à la main, avec des oublis et des doublons ; des questions courantes sans réponse hors des heures d'ouverture | Next.js, Supabase, Vercel, n8n, assistant IA (Groq, RAG) |
 | [Workflow n8n : prévenir le bon service à chaque nouvelle demande](projets/n8n-reception-demandes/) | Des demandes enregistrées mais personne n'est prévenu ; les demandes vagues n'ont pas de destinataire | n8n, IA (Groq), Supabase |
 
 *Projets réalisés en formation (entreprise fictive) ; les réalisations suivantes seront ajoutées après leur développement et leur vérification.*
