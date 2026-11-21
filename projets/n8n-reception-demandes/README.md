@@ -1,6 +1,6 @@
 # Workflow n8n : prévenir le bon service à chaque nouvelle demande
 
-*Projet réalisé dans le cadre de ma formation « Concevoir, développer et déployer des solutions IA-driven » (GDU / Coursenia, 2026). **Nova Services est une entreprise fictive** décrite par l'énoncé ; les demandes de test sont fictives.*
+*Projet réalisé dans le cadre de ma formation « Concevoir, développer et déployer des solutions IA-driven » (GDU / Coursenia, 2026), dont le jury a validé 2 blocs de compétences du titre Product Builder No Code (RNCP41766, niveau 6) le 19/11/2026. **Nova Services est une entreprise fictive** décrite par l'énoncé ; les demandes de test sont fictives.*
 
 **En une phrase** : dans l'application [Nova Services](../nova-services/), une nouvelle demande attendait qu'un collaborateur pense à ouvrir son espace. J'ai conçu un workflow n8n qui prévient automatiquement le bon service, utilise une IA pour proposer une catégorie aux demandes ambiguës et journalise chaque traitement, avec des mécanismes de repli et d'alerte en cas d'erreur.
 
