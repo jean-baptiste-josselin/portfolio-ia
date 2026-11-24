@@ -1,6 +1,6 @@
 # Nova Services : centraliser et suivre les demandes clients
 
-*Projet réalisé dans le cadre de ma formation « Concevoir, développer et déployer des solutions IA-driven » (GDU / Coursenia, 2026), dont le jury a validé 2 blocs de compétences du titre Product Builder No Code (RNCP41766, niveau 6) le 19/11/2026. **Nova Services est une entreprise fictive** décrite par l'énoncé ; aucune donnée réelle n'est utilisée.*
+*Projet réalisé dans le cadre de ma formation « Concevoir, développer et déployer des solutions IA-driven » (Global Digital University, 2026), dont le jury a validé 2 blocs de compétences du titre Product Builder No Code (RNCP41766, niveau 6) le 19/11/2026. **Nova Services est une entreprise fictive** décrite par l'énoncé ; aucune donnée réelle n'est utilisée.*
 
 **En une phrase** : une petite entreprise de services recevait ses demandes par email et téléphone, les recopiait dans plusieurs fichiers et en perdait le fil. J'ai conçu, développé et mis en ligne une application qui centralise toutes les demandes et montre à l'équipe ce qui reste à traiter.
 
